@@ -1,5 +1,6 @@
 class Contract < ApplicationRecord
-  belongs_to :user, :service
+  belongs_to :user
+  belongs_to :service
   
   validates :start_date, :end_date, :confirmed, precenses: :true
   
