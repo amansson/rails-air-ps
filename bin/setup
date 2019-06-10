@@ -1,4 +1,4 @@
-#!/usr/bin/env rubyzdfbzdb
+#!/usr/bin/env ruby
 require 'fileutils'
 include FileUtils
 
