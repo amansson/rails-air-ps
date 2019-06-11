@@ -24,13 +24,21 @@ class ServicesController < ApplicationController
   end
 
   def edit
-    
+    @service = Service.find(params[:id])
   end
 
   def update
+    @service = Service.find(params[:id])
+    @service.update(params_service)
+
+    redirect_to service_path(@service)
   end
 
-  def delete
+  def destroy
+   @service = Service.find(params[:id])
+   @service.destroy
+
+   redirect_to services_path
   end
 
   private
