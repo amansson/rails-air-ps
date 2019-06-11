@@ -1,6 +1,9 @@
-<%= render 'shared/errors', obj: @contract %>
+<div class="container">
+  <%= render 'shared/errors', obj: @contract %>
 
-<font color="black">
-  This is the rendered content: Some Simple form here after new or editl.
-  The topic above here is from the new.html.erb or edit.html.erb depending on where you came from.
-</font>
+  <%= simple_form_for @contract  do |f| %>
+    <%= f.input :start_date %>
+    <%= f.input :end_date %>
+    <%= f.button :submit, class: "btn-ps" %>
+  <% end %>
+</div>

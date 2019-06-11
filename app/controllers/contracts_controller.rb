@@ -1,34 +1,36 @@
 class ContractsController < ApplicationController
-  before_action :authenticate_user!
 
   def new
     @contract = Contract.new
+    @service = Service.find(params[:service_id])
   end
 
   def create
-    @contract = Contract.new(contract_params)
+    @service = Service.find(params[:service_id])
+    
+    @contract = @service.contracts.build(contract_params)
     @contract.user = current_user
+
     if @contract.save
       flash[:success] = "Contract was created successfully"
-      redirect_to contract_path(@contract)
+      redirect_to service_path(@service)
     else
-      render 'new'
+      render 'services/show'
     end  
   end
 
   def update
-        if @contract.update(contract_params)
-      flash[:success] = "Contract was successfully updated"
-      redirect_to contract_path(@contract)
-    else
-      render 'edit'
-    end
+    @contract = Contract.find(params[:id])
+
+    @contract.update(confirmed: true)
+    flash[:success] = "Contract was successfully updated"
+    redirect_to contract_path(@contract)
   end
 
   private
 
   def contract_params
-    params.require(:contract).permit(:start_date, :end_date, :confirmed)
+    params.require(:contract).permit(:start_date, :end_date)
   end
 
 end

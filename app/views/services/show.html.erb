@@ -3,3 +3,9 @@
 <%= @service.location %><br>
 <%= @service.price %><br>
 <%= link_to 'Delete', service_path(@service), method: :delete %>
+
+<%= simple_form_for [@service, @contract] do |f| %>
+  <%= f.input :start_date   %>
+  <%= f.input :end_date %>
+  <%= f.button :submit, class: "btn-ps" %>
+<% end %>
