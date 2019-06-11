@@ -1,23 +1,26 @@
 
-<%= simple_form_for @service do |f| %>
-  <%= f.input :name %>
-  <%= f.input :content %>
-  <%= f.input :price %>
-  <%= f.input :location %>
-  <%= f.association :category %>
-  <%= f.input :photo %>
-  <%= f.input :photo_cache, as: :hidden %>
-  <div class="flex">
-  <%= f.submit "Create awesome service!", class: "btn btn-secondary" %>
-  <% if @service.errors.any? %>
-  <div class="errors-container">
-    <ul>
-      <% @service.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-    </ul>
-  </div>
-  <% end %>
-  <% end %>
+<div class="form-ps">
+  <h1>Awesome Service</h1>
+  <%= simple_form_for service do |f| %>
+    <%= f.input :name %>
+    <%= f.input :content %>
+    <%= f.input :price %>
+    <%= f.input :location %>
+    <%= f.association :category %>
+    <%= f.input :photo %>
+    <%= f.input :photo_cache, as: :hidden %>
+    <div class="flex">
+    <%= f.submit "Create awesome service!", class: "btn btn-secondary" %>
+    <% if service.errors.any? %>
+    <div class="errors-container">
+      <ul>
+        <% service.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+    <% end %>
+    <% end %>
+    </div>
   </div>
 </div>
