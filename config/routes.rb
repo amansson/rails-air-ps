@@ -9,4 +9,8 @@ Rails.application.routes.draw do
   end
   resources :contracts, only: [:new, :create, :update]
   resources :categories, only: [:show]
+
+  namespace :provider do 
+    resources :services
+   end
 end
