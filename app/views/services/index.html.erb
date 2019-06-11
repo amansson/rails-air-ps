@@ -1,11 +1,3 @@
-
 <%= render 'shared/banner' %>
 
-<% @services.each do |service| %>
 <%= render 'shared/card-service' %>
-
-  <%= service.name %><br>
-  <%= service.content %><br>
-  <%= service.location %><br>
-  <%= service.price %><br>
-<% end %>
