@@ -41,9 +41,16 @@ Review.create!(rating: 3, service_id: 1, user_id: 4).save!(validate: false)
 Review.create!(rating: 1, service_id: 2, user_id: 1).save!(validate: false)
 
 
-Contract.create!(confirmed: "true", start_date: "2018-07-11", end_date: "2019-04-13", user_id: 1, service_id: 1).save!(validate: false)
-Contract.create!(confirmed: "true", start_date: "2019-02-01", end_date: "2019-02-16", user_id: 2, service_id: 1).save!(validate: false)
-Contract.create!(confirmed: "true", start_date: "2018-03-19", end_date: "2019-01-17", user_id: 3, service_id: 1).save!(validate: false)
-Contract.create!(confirmed: "true", start_date: "2014-12-15", end_date: "2019-02-19", user_id: 4, service_id: 2).save!(validate: false)
+Contract.create!(confirmed: "true", start_date: "2018-07-11", end_date: "2020-04-13", user_id: 1, service_id: 1).save!(validate: false)
+Contract.create!(confirmed: "false", start_date: "2019-02-01", end_date: "2019-02-16", user_id: 2, service_id: 1).save!(validate: false)
+Contract.create!(confirmed: "false", start_date: "2018-03-19", end_date: "2030-01-17", user_id: 3, service_id: 1).save!(validate: false)
+Contract.create!(confirmed: "true", start_date: "2014-12-15", end_date: "2029-02-19", user_id: 4, service_id: 2).save!(validate: false)
 Contract.create!(confirmed: "true", start_date: "2019-10-25", end_date: "2019-05-10", user_id: 1, service_id: 1).save!(validate: false)
+Contract.create!(confirmed: "false", start_date: "2018-03-19", end_date: "2019-01-17", user_id: 3, service_id: 1).save!(validate: false)
+Contract.create!(confirmed: "true", start_date: "2014-12-15", end_date: "2020-02-19", user_id: 4, service_id: 2).save!(validate: false)
+Contract.create!(confirmed: "false", start_date: "2019-10-25", end_date: "2021-05-10", user_id: 1, service_id: 1).save!(validate: false)
+Contract.create!(confirmed: "false", start_date: "2018-03-19", end_date: "2013-01-17", user_id: 3, service_id: 1).save!(validate: false)
+Contract.create!(confirmed: "true", start_date: "2014-12-15", end_date: "2019-02-19", user_id: 4, service_id: 2).save!(validate: false)
+Contract.create!(confirmed: "true", start_date: "2019-10-25", end_date: "2059-05-10", user_id: 1, service_id: 1).save!(validate: false)
+
 
