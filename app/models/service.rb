@@ -4,6 +4,6 @@ class Service < ApplicationRecord
   has_many :contracts
   has_many :reviews
 
-  validates :name, :content, :price, :location, presences: :true
+  validates :name, :content, :price, :location, presence: true
   validates :rating, numericality: { only_integer: true }
 end
