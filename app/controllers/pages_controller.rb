@@ -5,7 +5,7 @@ class PagesController < ApplicationController
   end
 
   def peter
-    @service = Service.new
+
   end
 
    def fiona

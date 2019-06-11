@@ -1,0 +1,19 @@
+.service_banner {
+  height: 400px;
+  background-size: cover;
+  h1 {
+    color: $yellow;
+    margin-top: 100px;
+    margin-left: 50px;
+    font-size: 60px;
+  }
+}
+
+.service-details {
+  margin: 50px;
+  padding: 15px;
+  background-color: white;
+  width: 40%;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
