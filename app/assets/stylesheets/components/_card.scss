@@ -6,6 +6,7 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
+  margin: 5px;
   img {
     height: 100%;
     width: 120px;
@@ -33,6 +34,8 @@
   overflow: hidden;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  width: 300px;
+  margin: 10px;
   img {
     height: 200px;
     width: 100%;
@@ -55,10 +58,10 @@
     align-items: flex-end;
     position: relative;
   }
-  .card-service-user {
-    position: absolute;
-    right: 16px;
-    top: -20px;
-    width: 40px;
-  }
+  // .card-service-user {
+  //   position: absolute;
+  //   right: 16px;
+  //   top: -20px;
+  //   width: 40px;
+  // }
 }
