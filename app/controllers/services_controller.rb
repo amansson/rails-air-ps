@@ -1,23 +1,20 @@
 class ServicesController < ApplicationController
 
   def index
-    @services = Services.all
+    @services = Service.all
   end
 
   def show
-   @service = Services.find(params[:id]) 
+   @service = Service.find(params[:id]) 
   end
 
   def new
-    @service = Services.new
+    @service = Service.new
   end
 
   def create
-    @service = Services.new(params_service)
-    @category = Category.find(params[:category_id])
-    @service.category = @category
-    @user = User.find(params[:user_id])
-    @service.user = @user;
+    @service = Service.new(params_service)
+    @service.user = current_user
     
     if @service.save
       redirect_to service_path(@service)
@@ -39,7 +36,7 @@ class ServicesController < ApplicationController
   private
 
   def params_service
-    params.require(:service).permit(:name, :content, :price, :location)
+    params.require(:service).permit(:name, :content, :price, :location, :category_id)
   end
   
 end
