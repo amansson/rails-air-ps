@@ -6,4 +6,8 @@ class Service < ApplicationRecord
 
   validates :name, :content, :price, :location, presence: true
   validates :price, numericality: { only_integer: true }
+
+  mount_uploader :photo, PhotoUploader
+
+  
 end
