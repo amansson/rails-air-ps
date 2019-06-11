@@ -4,13 +4,16 @@ Rails.application.routes.draw do
   get "/peter", to: "pages#peter"
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   resources :services do
-    resources :reviews, only: [:new, :create, :show]
-    resources :contracts, only: [:index, :show]
+    resources :reviews, only: [:new, :create]
+    resources :contracts, only: [:create]
   end
-  resources :contracts, only: [:new, :create, :update]
-  resources :categories, only: [:show]
+
+  namespace :consumer do
+    resources :contracts, only: [:index, :destroy]
+  end
 
   namespace :provider do 
-    resources :services
+    resources :services, only: [:index]
+    resources :contracts, only: [:index, :update, :destroy]
    end
 end
