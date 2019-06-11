@@ -7,4 +7,8 @@ class PagesController < ApplicationController
   def peter
     @service = Service.new
   end
+
+   def fiona
+    @service = Service.all
+  end
 end
