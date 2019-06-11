@@ -1,0 +1,10 @@
+<% @contracts.each do |contract| %>
+
+  <%= contract.service.name %> <br>
+  <%= contract.start_date %> <br><br>
+
+
+
+  <%= link_to "Confirm", provider_contract_path(contract) %>
+
+<% end %>
