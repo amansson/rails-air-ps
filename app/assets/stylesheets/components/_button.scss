@@ -24,10 +24,15 @@
   }
 }
 
-.btn-ps-sm {
-  padding: 2px 4px;
+.btn-ps-delete {
   letter-spacing: 0;
   border-radius: 2px;
-  font-size: 10px;
-  transform: scale(1)
+  font-size: 14px;
+  font-weight: bold;
+  color: rgb(173, 44, 44);
+  transition: 0.5 ease;
+
+  &:hover {
+    text-decoration: underline;
+  }
 }
