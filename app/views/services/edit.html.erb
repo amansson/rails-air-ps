@@ -1,1 +1,11 @@
+<% if @service.photo? %>
+  <div class="service_banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= cl_image_path @service.photo %>)">
+    <h1>UPDATE: <%= @service.name %> TESTAR</h1>
+  </div>
+<% else %>
+  <div class="service_banner_no_picture">
+    <h1>UPDATE: <%= @service.name %></h1>
+  </div>
+<% end %>
+<br>
 <%= render 'shared/service_form', service: @service %>
