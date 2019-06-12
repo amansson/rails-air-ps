@@ -13,7 +13,7 @@ Rails.application.routes.draw do
     resources :contracts, only: [:index, :destroy]
   end
 
-  namespace :provider do 
+  namespace :provider do
     resources :services, only: [:index]
     resources :contracts, only: [:index, :update, :destroy]
    end
