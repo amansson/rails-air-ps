@@ -1,9 +1,13 @@
-<div class="service_banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= cl_image_path @service.photo %>)"> -->
-  <!-- <div class="banner-img">
-    <%#= cl_image_tag @service.photo, width: 1900, height: 400, crop: :fill %>
-  </div> -->
-  <h1><%= @service.name %></h1>
-</div>
+
+<% if @service.photo? %>
+  <div class="service_banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= cl_image_path @service.photo %>)">
+    <h1><%= @service.name %> TESTAR</h1>
+  </div>
+<% else %>
+  <div class="service_banner_no_picture">
+    <h1><%= @service.name %></h1>
+  </div>
+<% end %>
 <div class="row">
   <div class="service-details">
     <p><strong>Description of this awesome service:</strong><br>

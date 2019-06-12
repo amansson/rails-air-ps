@@ -3,7 +3,7 @@
   background-size: cover;
   h1 {
     color: $yellow;
-    margin-top: 100px;
+    padding-top: 250px;
     margin-left: 50px;
     font-size: 60px;
   }
@@ -16,5 +16,18 @@
   background-color: white;
   width: 40%;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+.service_banner_no_picture {
+  background-size: cover;
+  background-position: top;
+  background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), asset-url('banner_pulp.jpeg');
+  height: 400px;
+  h1 {
+    color: $yellow;
+    padding-top: 250px;
+    margin-left: 50px;
+    font-size: 60px;
+  }
 }
 
