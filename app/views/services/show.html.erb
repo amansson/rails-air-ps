@@ -1,54 +1,53 @@
 <% if @service.photo? %>
-  <div class="service_banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= cl_image_path @service.photo %>)">
-    <h1><%= @service.name %></h1>
-  </div>
-<% else %>
-  <div class="service_banner_no_picture">
-    <h1><%= @service.name %></h1>
-  </div>
-<% end %>
-<div class="row">
-  <div class="service-details">
-    <h3>Description</h3>
-    <%= @service.content %></p>
-
-    <div class="info">
-      <p><strong>Area: </strong><%= @service.location %></p>
-      <p><strong>Price:  </strong><%= @service.price %> Euro</p>
-    </div>
-
-    <% if current_user &&  (current_user.id == @service.user_id) %>
-      <%= link_to service_path(@service), method: :delete do  %>
-        <span class="btn-ps"">Delete</span>
-      <% end %>
-   <% end %>
-  </div>
-  <div class="service-details">
-    <div class="form-ps">
-     <h3>FAKE TEST FORM - INSERT THE ANDREAS REAL FORM</h3>
-    <h1>Book this awesome Service</h1>
-      <div class="container">
-        <div class="form-wrapper" style="width: 400px; margin: 0 auto;">
-          <% @contract = Contract.new %>
-          <%= simple_form_for [@service, @contract] do |f| %>
-            <%= f.input :start_date, as: :string, required: false, input_html: {class: "datepicker"} %>
-            <%= f.input :end_date, as: :string, required: false, input_html: {class: "datepicker"} %>
-        <div class="flex">
-          <%= f.submit "Let's book it!", class: "btn-ps" %>
-          <% if @contract.errors.any? %>
-        <div class="errors-container">
-        <ul>
-          <% @contract.errors.full_messages.each do |message| %>
-            <li><%= message %></li>
-          <% end %>
-        </ul>
-      </div>
-      <% end %>
-      <% end %>
-      </div>
-    </div>
-  </div>
-  </div>
+<div class="service_banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= cl_image_path @service.photo %>)">
+	<h1><%= @service.name %></h1>
 </div>
-<p>THIS LINK SHOULD ONLY BE DISPLAYD FOR THE "SERVICE OWNER"</p>
-<%= link_to 'Delete', service_path(@service), method: :delete %>
+<% else %>
+<div class="service_banner_no_picture">
+	<h1><%= @service.name %></h1>
+</div>
+<% end %>
+<div class="container">
+	<div class="row">
+			<div class="service-details">
+				<h3>Description</h3>
+				<%= @service.content %></p>
+		
+				<div class="info">
+					<p><strong>Area: </strong><%= @service.location %></p>
+					<p><strong>Price:  </strong><%= @service.price %> Euro</p>
+				</div>
+		
+				<% if current_user &&  (current_user.id == @service.user_id) %>
+					<%= link_to service_path(@service), method: :delete do  %>
+						<span class="btn-ps"">Delete</span>
+					<% end %>
+				<% end %>
+			</div>
+		<div class="form-details">
+			<div class="form-ps">
+			<h1>Book awesome service</h1>
+			<div class="container">
+				<div class="form-wrapper" style="margin: 0 auto;">
+					<% @contract = Contract.new %>
+					<%= simple_form_for [@service, @contract] do |f| %>
+					<%= f.input :start_date, as: :string, required: false, input_html: {class: "datepicker"} %>
+					<%= f.input :end_date, as: :string, required: false, input_html: {class: "datepicker"} %>
+					<div class="flex">
+						<%= f.submit "Let's book it!", class: "btn-ps" %>
+						<% if @contract.errors.any? %>
+						<div class="errors-container">
+							<ul>
+								<% @contract.errors.full_messages.each do |message| %>
+								<li><%= message %></li>
+								<% end %>
+							</ul>
+						</div>
+						<% end %>
+						<% end %>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
