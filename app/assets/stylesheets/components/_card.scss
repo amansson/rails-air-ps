@@ -31,17 +31,22 @@
 
 // Cards for Landing-Page
 .card-service {
+  height: 350px;
   overflow: hidden;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   width: 300px;
   margin: 10px;
+  &:hover {
+    box-shadow: 0 0 20px rgba(0,0,0,0.9);
+  }
   img {
     height: 200px;
     width: 100%;
     object-fit: cover;
   }
   h2 {
+    height: 50px;
     font-size: 16px;
     font-weight: bold;
     margin: 0;
@@ -50,6 +55,12 @@
     font-size: 12px;
     opacity: .7;
     margin: 0;
+  }
+   a  {
+    text-decoration: none;
+    .card-info {
+      color: $gray;
+    }
   }
   .card-service-infos {
     padding: 16px;

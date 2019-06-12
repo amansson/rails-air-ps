@@ -7,7 +7,7 @@ class ServicesController < ApplicationController
   end
 
   def show
-   @service = Service.find(params[:id]) 
+   @service = Service.find(params[:id])
    @contract = Contract.new
   end
 
@@ -18,7 +18,7 @@ class ServicesController < ApplicationController
   def create
     @service = Service.new(params_service)
     @service.user = current_user
-    
+
     if @service.save
       redirect_to service_path(@service)
     else
@@ -41,7 +41,7 @@ class ServicesController < ApplicationController
    @service = Service.find(params[:id])
    @service.destroy
 
-   redirect_to services_path
+   redirect_to provider_services_path
   end
 
   private
@@ -49,5 +49,5 @@ class ServicesController < ApplicationController
   def params_service
     params.require(:service).permit(:name, :content, :price, :location, :category_id, :photo)
   end
-  
+
 end
