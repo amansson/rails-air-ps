@@ -2,6 +2,19 @@
   <div class="container">
     <h1>PS - We bring Professional Services to  the people of the world!</h1>
     <p>Let us help you to solve your problems in an <strong>super efficient way...</strong> <br>Are you a professional and <strong>want to earn som extra money?</strong></p>
-    <%= link_to "Sign up and add your service", new_user_session_path, class:"btn btn-secondary"%>
+    <%= link_to new_user_session_path, class:"btn-ps btn-ps-banner" do %>
+    Add your <strong>Skill</strong>
+    <% end %>
+
+    <div class="mt-5">
+      <%= form_tag services_path, method: :get do %>
+      <%= text_field_tag :query,
+        params[:query],
+        class: "input-search",
+        placeholder: "Find your PS"
+      %>
+      <%= submit_tag "Search", class: "btn-ps" %>
+    <% end %>
+    </div>
   </div>
 </div>

@@ -3,7 +3,11 @@ class ServicesController < ApplicationController
   skip_before_action :authenticate_user!, :only => [:index, :show]
 
   def index
-    @services = Service.all
+    if params[:query].present?
+      @services = Service.where("name ILIKE ?", "%#{params[:query]}%")
+    else
+      @services = Service.all
+    end
   end
 
   def show
