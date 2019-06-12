@@ -2,11 +2,15 @@
     <h1>Your booked services</h1>
 </div>
 <div class="container">
-  <% @contracts.each do |contract| %>
-    <div class="flex">
-      <h5><%= contract.service.name %></h5>
-      <h5><%= contract.start_date %> to <%= contract.end_date %></h5><br>
-      <%= link_to "Delete", provider_contract_path(contract), method: :delete, class: "btn-ps" %>
-    <% end %>
-  </div>
+  <% if @contracts.any? %>
+    <% @contracts.each do |contract| %>
+      <div class="flex">
+        <h5><%= contract.service.name %></h5>
+        <h5><%= contract.start_date %> to <%= contract.end_date %></h5><br>
+        <%= link_to "Delete", consumer_contract_path(contract), method: :delete, class: "btn-ps" %>
+      <% end %>
+    </div>
+  <% else %>
+    <h2>You don't have any booked services - go and book something!</h2>
+  <% end %>
 </div>
