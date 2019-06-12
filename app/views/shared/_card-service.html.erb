@@ -1,11 +1,20 @@
 <div class="card-service">
+  <%= link_to service_path(service) do %>
   <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg">
   <div class="card-service-infos">
     <div>
-      <h2><%= service.name %></h2>
-      <p><%= service.content %></p>
+      <h2 class="card-info"><%= service.name %></h2>
+      <p class="card-info"><%= service.content.first(50) %></p>
     </div>
-    <h2 class="card-service-pricing"><%= service.price %></h2>
+    <div class="align-items-end">
+      <h2 class="card-info"><%= service.price %> Euro</h2>
     <!-- <img src='https://kitt.lewagon.com/placeholder/users/krokrob' class="card-service-user avatar-bordered"/> -->
+      <% if current_user.id == service.user_id %>
+        <%= link_to service_path(service), method: :delete do  %>
+          <p class="btn-ps btn-ps-sm card-info">Delete</p>
+        <% end %>
+      <% end %>
+    </div>
   </div>
+  <% end %>
 </div>
