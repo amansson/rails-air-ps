@@ -1,10 +1,12 @@
-<% @contracts.each do |contract| %>
-
-  <%= contract.service.name %> <br>
-  <%= contract.start_date %> <br><br>
-
-
-
-  <%= link_to "Confirm", provider_contract_path(contract) %>
-
-<% end %>
+<div class="service_banner_no_picture">
+    <h1>Your booked services</h1>
+</div>
+<div class="container">
+  <% @contracts.each do |contract| %>
+    <div class="flex">
+      <%= contract.service.name %> <br>
+      <%= contract.start_date %> <br><br>
+      <%= link_to "Confirm", provider_contract_path(contract) %>
+    <% end %>
+  </div>
+</div>

@@ -1,4 +1,12 @@
-<% @contracts.each do |contract| %>
-  <%= contract.service.name %> <br>
-  <%= contract.start_date %> <br><br>
-<% end %>
+<div class="service_banner_no_picture">
+    <h1>Your booked services</h1>
+</div>
+<div class="container">
+  <% @contracts.each do |contract| %>
+    <div class="flex">
+      <h5><%= contract.service.name %></h5>
+      <h5><%= contract.start_date %> to <%= contract.end_date %></h5><br>
+      <%= link_to "Delete", provider_contract_path(contract), method: :delete, class: "btn-ps" %>
+    <% end %>
+  </div>
+</div>
