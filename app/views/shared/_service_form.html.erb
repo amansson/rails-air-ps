@@ -2,12 +2,12 @@
 <div class="form-ps">
   <h1>Awesome Service</h1>
   <%= simple_form_for service do |f| %>
-    <%= f.input :name %>
-    <%= f.input :content %>
-    <%= f.input :price %>
+    <%= f.input :name, label: "Service name" %>
+    <%= f.input :content, label: "Description of service" %>
+    <%= f.input :price, label: "Price (€)" %>
     <%= f.input :location %>
     <%= f.association :category %>
-    <%= f.input :photo %>
+    <%= f.input :photo, label: "Awesome service photo" %>
     <%= f.input :photo_cache, as: :hidden %>
     <div class="flex">
     <%= f.submit "Save awesome service!", class: "btn btn-secondary" %>
