@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
-  root to: 'pages#home'
+  root to: 'services#index'
   get "/peter", to: "pages#peter"
   get "/fiona", to: "pages#fiona"
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
