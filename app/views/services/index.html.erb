@@ -1,3 +1,5 @@
 <%= render 'shared/banner' %>
 
-<%= render 'shared/card-service' %>
+<% @services.each do |service| %>
+  <%= render 'shared/card-service', service: service %>
+<% end %>
