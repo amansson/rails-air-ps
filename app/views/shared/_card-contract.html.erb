@@ -1,8 +1,10 @@
 <div class="card-contract">
-  <img src=<%= service.photo %>>
+  <img src=<%= contract.service.photo %>>
   <div class="card-contract-infos">
-    <h2><%= service.name %></h2>
-    <p><%= service.content %></p>
+    <h2><%= contract.service.name %></h2>
+    <p><%= contract.start_date %></p>
+    <p><%= contract.end_date %></p>
+    <%= link_to "Confirm", provider_contract_path(contract) %>
   </div>
 </div>
 
