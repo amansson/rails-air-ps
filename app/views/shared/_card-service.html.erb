@@ -12,7 +12,7 @@
     <div class="align-items-end">
       <h2 class="card-info"><%= service.price %> Euro</h2>
     <!-- <img src='https://kitt.lewagon.com/placeholder/users/krokrob' class="card-service-user avatar-bordered"/> -->
-      <% if current_user.id == service.user_id %>
+      <% if current_user &&  (current_user.id == service.user_id) %>
         <%= link_to service_path(service), method: :delete do  %>
           <p class="btn-ps btn-ps-sm card-info">Delete</p>
         <% end %>
