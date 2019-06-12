@@ -1,4 +1,3 @@
-
 <% if @service.photo? %>
   <div class="service_banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= cl_image_path @service.photo %>)">
     <h1><%= @service.name %> TESTAR</h1>
@@ -24,7 +23,7 @@
       <%= f.input :start_date %>
       <%= f.input :end_date %>
       <div class="flex">
-      <%= f.submit "Let's book it!", class: "btn btn-secondary" %>
+      <%= f.submit "Let's book it!", class: "btn-ps" %>
       <% if @contract.errors.any? %>
       <div class="errors-container">
         <ul>
