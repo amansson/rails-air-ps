@@ -1,11 +1,43 @@
-<%= @service.name %><br>
-<%= @service.content %><br>
-<%= @service.location %><br>
-<%= @service.price %><br>
-<%= link_to 'Delete', service_path(@service), method: :delete %>
-
-<%= simple_form_for [@service, @contract] do |f| %>
-  <%= f.input :start_date   %>
-  <%= f.input :end_date %>
-  <%= f.button :submit, class: "btn-ps" %>
+<% if @service.photo? %>
+  <div class="service_banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= cl_image_path @service.photo %>)">
+    <h1><%= @service.name %> TESTAR</h1>
+  </div>
+<% else %>
+  <div class="service_banner_no_picture">
+    <h1><%= @service.name %></h1>
+  </div>
 <% end %>
+<div class="row">
+  <div class="service-details">
+    <p><strong>Description of this awesome service:</strong><br>
+    <%= @service.content %></p>
+    <p><strong>Service location: </strong><%= @service.location %></p>
+    <p><strong>Awesome price:  </strong><%= @service.price %> Euro</p>
+  </div>
+  <div class="service-details">
+    <div class="form-ps">
+     <h3>FAKE TEST FORM - INSERT THE ANDREAS REAL FORM</h3>
+    <h1>Book this awesome Service</h1>
+    <% @contract = Contract.new %>
+    <%= simple_form_for [@service, @contract] do |f| %>
+      <%= f.input :start_date %>
+      <%= f.input :end_date %>
+      <div class="flex">
+      <%= f.submit "Let's book it!", class: "btn-ps" %>
+      <% if @contract.errors.any? %>
+      <div class="errors-container">
+        <ul>
+          <% @contract.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+      <% end %>
+      <% end %>
+      </div>
+    </div>
+  </div>
+  </div>
+</div>
+<p>THIS LINK SHOULD ONLY BE DISPLAYD FOR THE "SERVICE OWNER"</p>
+<%= link_to 'Delete', service_path(@service), method: :delete %>
