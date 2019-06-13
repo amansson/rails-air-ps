@@ -25,20 +25,20 @@ User.create!(id: 2, email: "miauw@cat.com", password: "123456", first_name: "Mia
 User.create!(id: 3, email: "woof@dog.com", password: "123456", first_name: "Woof", last_name: "Dog").save(validate: false)
 User.create!(id: 4, email: "peep@mouse.com", password: "123456", first_name: "Peep", last_name: "Mouse").save(validate: false)
 
-Service.create!(id: 1, name: "Service Title1", content: "Some content description1", price: 10000, location: "Groningen", category_id: 33, user_id: 1).save!(validate: false)
-Service.create!(id: 2, name: "Service Title2", content: "Some content description2", price: 200, location: "Helsingborg", category_id: 34, user_id: 2).save!(validate: false)
-Service.create!(id: 3, name: "Service Title3", content: "Some content description3", price: 300, location: "Stockholm", category_id: 35, user_id: 3).save!(validate: false)
-Service.create!(id: 4, name: "Service Title4", content: "Some content description4", price: 600, location: "Copenhagen", category_id: 36, user_id: 4).save!(validate: false)
-Service.create!(id: 5, name: "Service Title5", content: "Some content description5", price: 8000, location: "Oslo", category_id: 37, user_id: 1).save!(validate: false)
-Service.create!(id: 6, name: "Service Title6", content: "Some content description6", price: 4000, location: "Samba", category_id: 33, user_id: 2).save!(validate: false)
+Service.create!(id: 1, name: "Hire Muscian", content: "Hire me the infamous Slash as your awesome guitar player", price: 10000, location: "Groningen", category_id: 33, user_id: 1, remote_photo_url: "https://res.cloudinary.com/favapps-dx-33/image/upload/v1560351307/zuezy1s7qlx8bhdquii7.jpg").save!(validate: false)
+Service.create!(id: 2, name: "Vincent & Jules killing service", content: "Vincent and Jules from Pulp fiction can be rented to scare the shit out of your neighbor or, if you prefer, kill your mother in-law or stupid boss.", price: 10000, location: "Helsingborg", category_id: 34, user_id: 2, remote_photo_url: "https://res.cloudinary.com/favapps-dx-33/image/upload/v1560351064/lesdru1fgui1jjiz1qt7.jpg").save!(validate: false)
+Service.create!(id: 3, name: "Hire me gardner", content: "Hire me gardner XXL", price: 300, location: "Stockholm", category_id: 35, user_id: 3, remote_photo_url: "https://res.cloudinary.com/favapps-dx-33/image/upload/v1560351042/bbppg0pdxknvokqpopfn.jpg").save!(validate: false)
+Service.create!(id: 4, name: "Hire Basketballer Roller", content: "I roll basketball", price: 600, location: "Copenhagen", category_id: 36, user_id: 4, remote_photo_url: "https://res.cloudinary.com/favapps-dx-33/image/upload/v1560350967/low1pidcbzv5aftmj4mr.jpg").save!(validate: false)
+Service.create!(id: 5, name: "Hire Flying man", content: "Follow me flyinig man", price: 8000, location: "Oslo", category_id: 37, user_id: 1, remote_photo_url: "https://res.cloudinary.com/favapps-dx-33/image/upload/v1560350428/zk3dynybkqo5eykzu46d.jpg").save!(validate: false)
+Service.create!(id: 6, name: "Super Hire Capeman", content: "Capeman for hire", price: 4000, location: "Samba", category_id: 33, user_id: 2, remote_photo_url: "https://res.cloudinary.com/favapps-dx-33/image/upload/v1560347616/flying-dude_izv4od.jpg").save!(validate: false)
 
 
 
-Review.create!(rating: 4, service_id: 2, user_id: 1).save!(validate: false)
-Review.create!(rating: 2, service_id: 1, user_id: 2).save!(validate: false)
-Review.create!(rating: 5, service_id: 2, user_id: 3).save!(validate: false)
-Review.create!(rating: 3, service_id: 1, user_id: 4).save!(validate: false)
-Review.create!(rating: 1, service_id: 2, user_id: 1).save!(validate: false)
+# Review.create!(rating: 4, service_id: 2, user_id: 1).save!(validate: false)
+# Review.create!(rating: 2, service_id: 1, user_id: 2).save!(validate: false)
+# Review.create!(rating: 5, service_id: 2, user_id: 3).save!(validate: false)
+# Review.create!(rating: 3, service_id: 1, user_id: 4).save!(validate: false)
+# Review.create!(rating: 1, service_id: 2, user_id: 1).save!(validate: false)
 
 
 Contract.create!(confirmed: "true", start_date: "2018-07-11", end_date: "2020-04-13", user_id: 1, service_id: 1).save!(validate: false)
