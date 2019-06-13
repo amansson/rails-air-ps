@@ -6,7 +6,9 @@
 	</div>
 <% else %>
 	<div class="service_banner_no_picture">
-		<h1><%= @service.name %></h1>
+    <div class="container">
+		  <h1><%= @service.name %></h1>
+    </div>
 	</div>
 <% end %>
 <div class="container mt-5 mb-5">
@@ -14,19 +16,19 @@
 		<div class="col">
 			<h2>Description</h2>
 			<%= @service.content %></p>
-	
+
 			<p><strong>Area: </strong><%= @service.location %></p>
 			<p><strong>Price:  </strong><%= @service.price %> Euro</p>
 
 			<div class="info mt-5">
 				<p>Created by: <strong><%= @service.user.first_name %> <%= @service.user.last_name %></strong></p>
-	
+
 				<% if current_user &&  (current_user.id == @service.user_id) %>
 					<span>Keep your <strong>awesomness</strong>? </span>
 					<%= link_to edit_service_path(@service) do  %>
 						<span class="btn-ps-delete"">  Update</span>
-					<% end %>					
-					 | 
+					<% end %>
+					 |
 					<%= link_to service_path(@service), method: :delete do  %>
 						<span class="btn-ps-delete"">  Delete</span>
 					<% end %>
@@ -48,7 +50,7 @@
 										<% @contract.errors.full_messages.each do |message| %>
 											<li><%= message %></li>
 										<% end %>
-									</ul>	
+									</ul>
 								</div>
 							<% end %>
 						<% end %>

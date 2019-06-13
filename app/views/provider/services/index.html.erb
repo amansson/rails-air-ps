@@ -1,6 +1,8 @@
 <% if @services.last.photo? %>
   <div class="service_banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= cl_image_path @services.last.photo %>)">
-    <h1>Your awesome services</h1>
+    <div class="container">
+      <h1>Your awesome services</h1>
+    </div>
   </div>
 <% else %>
   <div class="service_banner_no_picture">
