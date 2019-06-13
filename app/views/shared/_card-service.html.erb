@@ -14,7 +14,7 @@
     <!-- <img src='https://kitt.lewagon.com/placeholder/users/krokrob' class="card-service-user avatar-bordered"/> -->
       <% if current_user &&  (current_user.id == service.user_id) %>
         <%= link_to service_path(service), method: :delete do  %>
-          <p class="btn-ps btn-ps-sm card-info">Delete</p>
+          <p class="btn-ps-delete">Delete</p>
         <% end %>
       <% end %>
     </div>
