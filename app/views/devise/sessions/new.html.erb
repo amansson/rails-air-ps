@@ -1,10 +1,12 @@
-<h2>Log in</h2>
-
+<div class="service_banner_no_picture">
+  <div class="container">
+    <h1 class="ml-5 pl-5">Log in to Professional Services</h1>
+  </div>
+</div>
 <div class="container">
- <div class="row justify-content-md-center">
-    <div class="col col-lg-4">
+  <div class="form-ps mt-2 mb-2" style="width:50%">
       <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-      
+
         <div class="form-group">
           <%= f.input :email,
                       required: false,
@@ -19,9 +21,6 @@
         <%= f.button :submit, "Log in", class:"btn-ps" %>
 
        <% end %>
-      <br>
-      <br>
-      <%= render "devise/shared/links" %>
-    </div>
+    <%= render "devise/shared/links" %>
   </div>
 </div>
