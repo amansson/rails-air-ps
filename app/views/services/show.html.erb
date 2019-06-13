@@ -9,25 +9,24 @@
 <% end %>
 <div class="container">
 	<div class="row">
-			<div class="service-details col">
-				<h3>Description</h3>
-				<%= @service.content %></p>
-		
-				<div class="info">
-					<p><strong>Area: </strong><%= @service.location %></p>
-					<p><strong>Price:  </strong><%= @service.price %> Euro</p>
-				</div>
-		
-				<% if current_user &&  (current_user.id == @service.user_id) %>
-					<%= link_to service_path(@service), method: :delete do  %>
-						<span class="btn-ps"">Delete</span>
-					<% end %>
-				<% end %>
+		<div class="service-details col">
+			<h3>Description</h3>
+			<%= @service.content %></p>
+	
+			<div class="info">
+				<p><strong>Area: </strong><%= @service.location %></p>
+				<p><strong>Price:  </strong><%= @service.price %> Euro</p>
 			</div>
+	
+			<% if current_user &&  (current_user.id == @service.user_id) %>
+				<%= link_to service_path(@service), method: :delete do  %>
+					<span class="btn-ps"">Delete</span>
+				<% end %>
+			<% end %>
+		</div>
 		<div class="form-details col">
 			<div class="form-ps">
-			<h1>Book awesome service</h1>
-			<div class="container">
+				<h1>Book awesome service</h1>
 				<div class="form-wrapper" style="margin: 0 auto;">
 					<% @contract = Contract.new %>
 					<%= simple_form_for [@service, @contract] do |f| %>
@@ -50,5 +49,4 @@
 			</div>
 		</div>
 	</div>
-</div>
 </div>
