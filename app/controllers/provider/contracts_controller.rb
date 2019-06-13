@@ -10,7 +10,13 @@ module Provider
       @contract = Contract.find(params[:id])
       @contract.confirmed = true
       @contract.save
-      redirect_to consumer_contracts_path
+      redirect_to provider_contracts_path
+    end
+
+    def destroy
+      @contract = Contract.find(params[:id])
+      @contract.destroy
+      redirect_to provider_contracts_path
     end
 
   end
