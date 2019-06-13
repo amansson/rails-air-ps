@@ -30,11 +30,12 @@
             <%= image_tag "three_lines_menu.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
               <%= link_to "My bookings", consumer_contracts_path, class: "dropdown-item" %>
-              <%= link_to "Add a new service", new_service_path, class: "dropdown-item" %>
               <% if current_user.services.any? %>
-                <%= link_to "My services", provider_services_path, class: "dropdown-item" %>
                 <%= link_to "My service requests", provider_contracts_path, class: "dropdown-item" %>
+                <%= link_to "My services", provider_services_path, class: "dropdown-item" %>
               <% end %>
+              <%= link_to "Add a new service", new_service_path, class: "dropdown-item" %>
+
               <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
             </div>
           </li>
