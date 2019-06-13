@@ -4,7 +4,8 @@ class ServicesController < ApplicationController
 
   def index
     if params[:query].present?
-      @services = Service.where("name ILIKE ?", "%#{params[:query]}%")
+      sql_query = "services.name ILIKE :query OR categories.name ILIKE :query"
+      @services = Service.joins(:category).where(sql_query, query: "%#{params[:query]}%")
     else
       @services = Service.all
     end
