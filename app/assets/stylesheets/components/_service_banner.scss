@@ -3,7 +3,8 @@
   background-size: cover;
   background-position: top;
   h1 {
-    color: $yellow;
+    color: $light-gray;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
     padding-top: 250px;
     margin-left: 50px;
     font-size: 60px;
@@ -30,7 +31,8 @@
   background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), asset-url('banner_pulp.jpeg');
   height: 400px;
   h1 {
-    color: $yellow;
+    color: $light-gray;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
     padding-top: 250px;
     margin-left: 50px;
     font-size: 60px;
