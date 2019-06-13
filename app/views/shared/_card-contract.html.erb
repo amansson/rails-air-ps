@@ -9,10 +9,17 @@
       <% unless contract.confirmed %>
         <% if current_user.id == contract.service.user_id %>
           <%= link_to provider_contract_path(contract), method: :patch do %>
-            <div class="btn-ps">
-              Confirm
-          </div>
+            <div class="d-flex">
+              <div class="btn-ps mx-2">
+                Confirm
+              </div>
             <% end %>
+            <%= link_to provider_contract_path(contract), method: :delete, data: { Confirm: 'Are you sure?' } do %>
+              <div class="btn-ps bg-danger">
+                Decline
+              </div>
+            <% end %>
+            </div>
         <% else %>
           <div class="text-success">
             <strong> Confirmation Pending </strong>
