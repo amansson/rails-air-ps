@@ -3,9 +3,21 @@
 </div>
 
 
-<div class="container">
+<div class="container mt-5">
+  <h2>New Bookings:</h2>
   <% @contracts.each do |contract| %>
-  <%= render 'shared/card-contract', contract: contract %>
+    <% if contract.confirmed == false %>
+      <%= render 'shared/card-contract', contract: contract %>
     <% end %>
+  <% end %>
+  </div>
+
+  <div class="container mt-5 mb-5">
+  <h2>Confirmed Bookings:</h2>
+  <% @contracts.each do |contract| %>
+    <% if contract.confirmed == true %>
+      <%= render 'shared/card-contract', contract: contract %>
+    <% end %>
+  <% end %>
   </div>
 </div>
