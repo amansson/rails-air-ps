@@ -15,7 +15,7 @@ class ContractsController < ApplicationController
 
     if @contract.save
       flash[:success] = "Contract was created successfully"
-      redirect_to service_path(@service)
+      redirect_to consumer_contracts_path
     else
       render 'services/show'
     end
