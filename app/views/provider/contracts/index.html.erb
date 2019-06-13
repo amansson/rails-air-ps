@@ -2,11 +2,10 @@
     <h1>Your booked services</h1>
 </div>
 
-
 <div class="container mt-5">
   <h2>New Bookings:</h2>
   <% @contracts.each do |contract| %>
-    <% if contract.confirmed == false %>
+    <% unless contract.confirmed %>
       <%= render 'shared/card-contract', contract: contract %>
     <% end %>
   <% end %>
@@ -20,4 +19,3 @@
     <% end %>
   <% end %>
   </div>
-
