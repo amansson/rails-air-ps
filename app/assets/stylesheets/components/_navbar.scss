@@ -22,11 +22,22 @@ li.nav-item {
 }
 
 
-  a {
-color: #b7c7c7;
+a {
+  color: #a8bdbd;
     text-decoration: none;
+    &.dropdown-item:hover {
+      background-color: rgba(150,150,150,0.5);
+    }
+    &.dropdown-item:active {
+      background-color: $button-color;
+    }
       &:hover {
-        color: #000000;
+
+      color: #000000;
       text-decoration: none;
     }
   }
+
+.menu-bg {
+  font-size: 8px;
+}
