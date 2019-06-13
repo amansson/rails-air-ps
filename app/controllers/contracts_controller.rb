@@ -1,7 +1,5 @@
 class ContractsController < ApplicationController
 
-
-
   def new
     @contract = Contract.new
     @service = Service.find(params[:service_id])
