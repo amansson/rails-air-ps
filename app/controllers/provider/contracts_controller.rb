@@ -2,8 +2,8 @@ module Provider
   class ContractsController < ApplicationController
 
     def index
-      @contracts = current_user.contracts
       @services = current_user.services
+      @contracts = @services.map { |service| service.contracts }.flatten
     end
 
     def update

@@ -1,5 +1,7 @@
 class ContractsController < ApplicationController
 
+
+
   def new
     @contract = Contract.new
     @service = Service.find(params[:service_id])
@@ -7,7 +9,7 @@ class ContractsController < ApplicationController
 
   def create
     @service = Service.find(params[:service_id])
-    
+
     @contract = @service.contracts.build(contract_params)
     @contract.user = current_user
 
@@ -16,7 +18,7 @@ class ContractsController < ApplicationController
       redirect_to service_path(@service)
     else
       render 'services/show'
-    end  
+    end
   end
 
   def update
