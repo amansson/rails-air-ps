@@ -1,10 +1,18 @@
 <div class="card-contract">
   <img src=<%= contract.service.photo %>>
   <div class="card-contract-infos">
-    <h2><%= contract.service.name %></h2>
-    <p><%= contract.start_date %></p>
-    <p><%= contract.end_date %></p>
-    <%= link_to "Confirm", provider_contract_path(contract) %>
+    <div class="container">
+      <h2><%= contract.service.name %></h2>
+      <p><%= contract.start_date %></p>
+      <p><%= contract.end_date %></p>
+    </div>
+    <div class="container">
+      <% if contract.confirmed == false %>
+          <%= link_to "Confirm", provider_contract_path(contract) %>
+        <% else %>
+          <%= link_to "Cancel Booking", provider_contract_path(contract), method: :delete, data: { Confirm: 'Are you sure?' } %>
+      <% end %>
+    </div>
   </div>
 </div>
 
