@@ -1,7 +1,5 @@
 class ContractsController < ApplicationController
 
-
-
   def new
     @contract = Contract.new
     @service = Service.find(params[:service_id])
@@ -22,6 +20,7 @@ class ContractsController < ApplicationController
   end
 
   def update
+    raise
     @contract = Contract.find(params[:id])
 
     @contract.update(confirmed: true)

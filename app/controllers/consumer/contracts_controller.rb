@@ -1,6 +1,5 @@
 module Consumer
   class ContractsController < ApplicationController
-
     def index
       @contracts = current_user.contracts
     end
@@ -10,7 +9,6 @@ module Consumer
       @contract.destroy
       redirect_to consumer_contracts_path
     end
-
 
   end
 end
