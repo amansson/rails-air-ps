@@ -1,34 +1,42 @@
 <% if @service.photo? %>
 	<div class="service_banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= cl_image_path @service.photo %>)">
-		<h1><%= @service.name %></h1>
+		<div class="container">
+			<h1 class="ml-0"><%= @service.name %></h1>
+		</div>
 	</div>
 <% else %>
 	<div class="service_banner_no_picture">
 		<h1><%= @service.name %></h1>
 	</div>
 <% end %>
-<div class="container">
+<div class="container mt-5 mb-5">
 	<div class="row">
-		<div class="service-details col">
-			<h3>Description</h3>
+		<div class="col">
+			<h2>Description</h2>
 			<%= @service.content %></p>
 	
-			<div class="info">
-				<p><strong>Area: </strong><%= @service.location %></p>
-				<p><strong>Price:  </strong><%= @service.price %> Euro</p>
-			</div>
+			<p><strong>Area: </strong><%= @service.location %></p>
+			<p><strong>Price:  </strong><%= @service.price %> Euro</p>
+
+			<div class="info mt-5">
+				<p>Created by: <strong><%= @service.user.first_name %> <%= @service.user.last_name %></strong></p>
 	
-			<% if current_user &&  (current_user.id == @service.user_id) %>
-				<%= link_to service_path(@service), method: :delete do  %>
-					<span class="btn-ps"">Delete</span>
+				<% if current_user &&  (current_user.id == @service.user_id) %>
+					<span>Keep your <strong>awesomness</strong>? </span>
+					<%= link_to edit_service_path(@service) do  %>
+						<span class="btn-ps-delete"">  Update</span>
+					<% end %>					
+					 | 
+					<%= link_to service_path(@service), method: :delete do  %>
+						<span class="btn-ps-delete"">  Delete</span>
+					<% end %>
 				<% end %>
-			<% end %>
+				</div>
 		</div>
-		<div class="form-details col">
+		<div class="col">
 			<div class="form-ps">
 				<h1>Book awesome service</h1>
 				<div class="form-wrapper" style="margin: 0 auto;">
-					<% @contract = Contract.new %>
 					<%= simple_form_for [@service, @contract] do |f| %>
 						<%= f.input :start_date, as: :string, required: false, input_html: {class: "datepicker"} %>
 						<%= f.input :end_date, as: :string, required: false, input_html: {class: "datepicker"} %>
