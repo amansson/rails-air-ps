@@ -3,10 +3,10 @@
   <div class="card-contract-infos">
     <div class="container">
       <h2><%= contract.service.name %></h2>
-      <p><%= contract.start_date %></p>
-      <p><%= contract.end_date %></p>
+      <p><%= contract.start_date.to_s.first(10) %></p>
+      <p><%= contract.end_date.to_s.first(10) %></p>
     </div>
-      <% if contract.confirmed == false %>
+      <% unless contract.confirmed %>
         <%= link_to provider_contract_path(contract) do %>
           <div class="btn-ps">
             Confirm
