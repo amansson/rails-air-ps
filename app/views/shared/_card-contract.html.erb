@@ -4,6 +4,7 @@
     <div >
       <h2><%= contract.service.name %></h2>
       <p>Service is booked from <strong>  <%= contract.start_date.to_s.first(10) %></strong> to <strong> <%= contract.end_date.to_s.first(10) %></strong></p>
+      <p>Total price: <strong> <%= ((contract.end_date - contract.start_date)/(24*60*60) * contract.service.price).to_i %> €</strong></p>
     </div>
       <% unless contract.confirmed %>
         <% if current_user.id == contract.service.user_id %>
