@@ -1,16 +1,21 @@
 <div class="service_banner_no_picture">
     <h1>Your booked services</h1>
 </div>
-<div class="container">
-  <% if @contracts.any? %>
-    <% @contracts.each do |contract| %>
-      <div class="flex">
-        <h5><%= contract.service.name %></h5>
-        <h5><%= contract.start_date %> to <%= contract.end_date %></h5><br>
-        <%= link_to "Delete", consumer_contract_path(contract), method: :delete, class: "btn-ps" %>
-      <% end %>
-    </div>
-  <% else %>
-    <h2>You don't have any booked services - go and book something!</h2>
+
+<div class="container mt-5">
+  <h2>New Bookings:</h2>
+  <% @contracts.each do |contract| %>
+    <% unless contract.confirmed %>
+      <%= render 'shared/card-contract', contract: contract %>
+    <% end %>
   <% end %>
-</div>
+  </div>
+
+  <div class="container mt-5 mb-5">
+  <h2>Confirmed Bookings:</h2>
+  <% @contracts.each do |contract| %>
+    <% if contract.confirmed == true %>
+      <%= render 'shared/card-contract', contract: contract %>
+    <% end %>
+  <% end %>
+  </div>
