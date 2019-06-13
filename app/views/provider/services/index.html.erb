@@ -9,11 +9,8 @@
     <h1>Your awesome services</h1>
   </div>
 <% end %>
-<div class="container" style="min-height: 700px;">
-  <br>
-  <div class="d-flex">
+<div class="container mt-4 mb-3 d-flex align-content-around flex-wrap">
     <% @services.each do |service| %>
       <%= render 'shared/card-service', service: service, delete: true %>
     <% end %>
-  </div>
 </div>
